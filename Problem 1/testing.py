@@ -5,7 +5,7 @@ import math
 import random
 
 
-# Input variables
+# Input variables asgf
 
 stepSize = float(input('Step size = '))
 stepCount = int(input('Number of steps =  '))
