@@ -6,7 +6,14 @@ import matplotlib.animation as animation
 import tkinter as tk
 from tkinter import simpledialog, messagebox
 
-# Graphical user integrac
+
+# Input variables
+
+particles = []
+particleCount = 0
+particleMass = 0
+
+# Graphical user interface
 
 def get_inputs():
     root = tk.Tk()

@@ -80,7 +80,7 @@ ax.set_ylim(-1 * maximum, maximum)
 
 
 
-
+plt.title(f"Random walk, Step size = {stepSize}, Step count = {stepCount}")
 plt.plot(xPath, yPath)
 plt.show()
 
