@@ -43,10 +43,17 @@ bounds = 100
 
 # Creates the array of particles
 
+newPX = bounds/2
+newPY = bounds/2
+
+
 for i in range(0,particleCount):
 
-    newPX = bounds * random.random()
-    newPY = bounds * random.random()
+    while bounds/2 - largePRadius*1.1 < newPX < bounds/2 + largePRadius*1.1:
+        newPX = bounds * random.random()
+    
+    while bounds/2 - largePRadius*1.1 < newPY < bounds/2 + largePRadius*1.1:
+        newPY = bounds * random.random()
 
     # 3rd value is the angle of the velocity (radians) will come in useful later
 
@@ -56,9 +63,12 @@ for i in range(0,particleCount):
 
 # The fun stuff
 
+x = [p[0] for p in particles]
+y = [p[1] for p in particles]
 
-while True:
-    for particle in particles:
+plt.scatter(x, y)
+plt.show()
+
 
 
 
