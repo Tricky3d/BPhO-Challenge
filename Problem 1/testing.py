@@ -3,12 +3,31 @@
 import matplotlib.pyplot as plt
 import math
 import random
+import tkinter as tk
+from tkinter import simpledialog, messagebox
 
 
-# Input variables asgf
 
-stepSize = float(input('Step size = '))
-stepCount = int(input('Number of steps =  '))
+# Input variables and gui
+
+stepSize = 0.0
+stepCount = 0
+
+def get_inputs():
+    root = tk.Tk()
+    root.withdraw()  # Hide the main window
+
+    # Ask for first input
+    input1 = float(simpledialog.askstring("Input", "Enter step size:"))
+    
+    # Ask for second input
+    input2 = int(simpledialog.askstring("Input", "Enter step count:"))
+
+    root.destroy()  # Close everything
+
+    return input1, input2
+
+stepSize, stepCount = get_inputs()
 
 
 # Intialise arrays
