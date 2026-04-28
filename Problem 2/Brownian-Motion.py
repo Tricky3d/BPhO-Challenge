@@ -7,12 +7,6 @@ import tkinter as tk
 from tkinter import simpledialog, messagebox
 
 
-# Input variables
-
-particles = []
-particleCount = 0
-particleMass = 0
-
 # Graphical user interface
 
 def get_inputs():
@@ -29,7 +23,42 @@ def get_inputs():
 
     return input1, input2
 
-val1, val2 = get_inputs()
+# Input variables
+
+particles = []
+particleCount = 100
+particleMass = 1.0
+particleRadius = 1
+
+newParticle = []
+newPX = 0.0
+newPY = 0.0
+
+largePMass = 10.0
+largePRadius = 10
+
+bounds = 100
+
+# Main program
+
+# Creates the array of particles
+
+for i in range(0,particleCount):
+
+    newPX = bounds * random.random()
+    newPY = bounds * random.random()
+
+    newParticle = [newPX, newPY, 0]
+    particles.append(newParticle)
+
+
+# The fun stuff
+
+
+while True:
+    for particle in particles:
+
+
 
 
 
