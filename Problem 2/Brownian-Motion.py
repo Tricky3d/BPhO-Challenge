@@ -49,7 +49,7 @@ for i in range(0,particleCount):
     newPY = bounds * random.random()
 
     # 3rd value is the angle of the velocity (radians) will come in useful later
-    
+
     newParticle = [newPX, newPY, 0]
     particles.append(newParticle)
 
