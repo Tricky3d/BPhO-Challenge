@@ -35,9 +35,12 @@ newPX = 0.0
 newPY = 0.0
 
 largePMass = 10.0
-largePRadius = 30
+largePRadius = 20
 
 bounds = 100
+
+stepsPerSecond = 0
+stepsize = 1
 
 # Main program
 
@@ -53,9 +56,9 @@ for i in range(0,particleCount):
         newPX = bounds * random.random()
         newPY = bounds * random.random()
 
-    # 3rd value is the angle of the velocity (radians) will come in useful later
+    # 3rd value is the angle of the velocity (radians with respect to the horizontal) will come in useful later
 
-    newParticle = [newPX, newPY]
+    newParticle = [newPX, newPY, 0]
     particles.append(newParticle)
     
     newPX = bounds/2
@@ -64,11 +67,14 @@ for i in range(0,particleCount):
 
 # The fun stuff
 
-x = [p[0] for p in particles]
-y = [p[1] for p in particles]
+while True:
+    for particle in particles:
+        if math.sqrt((newPX-bounds/2)**2 + (newPY-bounds/2)**2 ) < largePRadius:
+            #
+        else:
+            particle[2] = 2 * math.pi * random.random
 
-plt.scatter(x, y)
-plt.show()
+
 
 
 
