@@ -1,2 +1,2 @@
-for i in range(0,5):
-    print(i)
+import math
+print (math.tan(-0.5))
