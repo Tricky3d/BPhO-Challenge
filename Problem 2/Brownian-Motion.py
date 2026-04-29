@@ -86,9 +86,7 @@ while True:
             particleGradient = math.tan(particle[2])
             particleRadiusGradient = (particle[1] - largeParticlePos[1])/(particle[0] - largeParticlePos[0])
             particleTangentGradient = -(1/particleRadiusGradient)
-            collisionAngle = math.pi/2 - math.arctan(abs(particleGradient - particleTangentGradient)/1 + particleGradient * particleTangentGradient)
-            
-            particleMomentum = [particleMass * ,]
+            collisionAngle = math.pi/2 - math.atan(abs(particleGradient - particleTangentGradient)/1 + particleGradient * particleTangentGradient)
 
 
         else:
