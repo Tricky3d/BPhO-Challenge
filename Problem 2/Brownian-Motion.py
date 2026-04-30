@@ -6,6 +6,7 @@ import matplotlib.animation as animation
 import tkinter as tk
 from tkinter import simpledialog, messagebox
 import math
+import time
 
 # Graphical user interface
 
@@ -26,7 +27,7 @@ def get_inputs():
 # Input variables
 
 particles = []
-particleCount = 100
+particleCount = 1
 particleMass = 1.0
 particleRadius = 1
 particleGradient = 0
@@ -48,7 +49,7 @@ largeParticleVelocity = []
 
 bounds = 100
 
-stepsPerSecond = 0
+stepsPerSecond = 1
 stepsize = 1
 
 # Main program
@@ -79,8 +80,9 @@ for i in range(0,particleCount):
 largeParticlePos = [bounds/2,bounds/2]
 largeParticleVelocity = [0,0]
 
+print(particles)
 
-while True:
+def step():
     for particle in particles:
         if math.sqrt((newPX-largeParticlePos[0])**2 + (newPY-largeParticlePos[1])**2 ) < largePRadius:
             particleGradient = math.tan(particle[2])
@@ -90,7 +92,17 @@ while True:
 
 
         else:
-            particle[2] = 2 * math.pi * random.random
+            particle[2] = 2 * math.pi * random.random()
+        particle[0] += stepsize * math.cos(particle[2])
+        particle[1] += stepsize * math.sin(particle[2])
+    time.sleep(1/stepsPerSecond)
+
+    print(particle)
+    step()
+    
+step()
+
+
 
 
 
